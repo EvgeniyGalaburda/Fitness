@@ -1,0 +1,79 @@
+# Загальні node.js
+node_modules
+npm-debug.log*
+yarn-error.log*
+
+# Локальні файли конфігурації (не комітити!)
+.env
+.env.*.local
+.env.development
+.env.production
+.env.test
+.env.local
+
+# Файли, що генеруються
+build
+dist
+coverage
+tmp
+out
+gen
+generated
+
+# Логи
+logs
+*.log
+
+# Файли пакетних менеджерів
+package-lock.json
+yarn.lock
+
+# Редактори та IDE
+.idea
+.vscode
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.swp
+*.swo
+.sourcetreecache
+.DS_Store
+
+# Специфічні для операційної системи
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Клієнтська частина (залежно від фреймворку/бібліотеки)
+# Якщо використовуєте React:
+/client/build
+
+# Якщо використовуєте Vue.js:
+/client/dist
+/client/.yarn
+/client/.pnp
+/client/.pnp.js
+
+# Якщо використовуєте Angular:
+/client/dist
+
+# Загальні для клієнтської частини
+/client/node_modules
+
+# Інші тимчасові файли
+*.orig
+*.pyc
+__pycache__/
+
+# Docker
+docker-compose.override.yml
+.dockerenv
+
+# Kubernetes
+.kube
+
+# Інші файли, які ви не хочете комітити
+# наприклад, особисті нотатки, тимчасові файли розробки
+# my-secret-file.txt
+# debug-output.txt
