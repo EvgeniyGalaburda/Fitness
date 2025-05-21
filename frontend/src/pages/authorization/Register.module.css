@@ -1,0 +1,65 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  gap: 70px;
+  color: #fff;
+  z-index: 99;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  background: #26252ed7;
+  backdrop-filter: blur(20px);
+  padding: 50px;
+  border-radius: 30px;
+}
+
+.page > h1 {
+  font-size: 48px;
+  margin-top: 80px;
+  font-weight: 700;
+}
+
+.content > input {
+  border: none;
+  outline: none;
+  color: #c9c9c9;
+  background: none;
+  font-size: 20px;
+  border-bottom: 2px solid transparent;
+  border-left: 3px solid #2733b1;
+  padding: 10px;
+  margin-bottom: 20px;
+  position: relative;
+  transition: all 0.1s;
+}
+.content > input:focus {
+  border-bottom: 2px solid #c9c9c9;
+}
+
+.content > h2 {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.content a {
+  color: #fff;
+  text-align: center;
+  margin-top: 40px;
+}
+
+.content select {
+  background: transparent;
+  color: #fff;
+  font-size: 20px;
+  margin-bottom: 30px;
+  padding: 5px;
+  border: none;
+}
+.content select option {
+  color: #000;
+}

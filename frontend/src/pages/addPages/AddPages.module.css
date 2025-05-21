@@ -1,0 +1,60 @@
+.page {
+  margin: 0 auto;
+  background: linear-gradient(
+    180deg,
+    rgba(85, 85, 85, 0.59) 0%,
+    rgba(63, 63, 65, 0.64) 100%
+  );
+  padding: 30px;
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  border-radius: 20px;
+  backdrop-filter: blur(20px);
+}
+
+.page h1 {
+  font-size: 32px;
+  color: #fff;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.page h2 {
+  font-size: 20px;
+  color: #fff;
+  font-weight: 600;
+}
+
+.page form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.page input {
+  border: none;
+  outline: none;
+  color: #c9c9c9;
+  background: none;
+  font-size: 20px;
+  border-bottom: 2px solid transparent;
+  border-left: 3px solid #2733b1;
+  padding: 10px;
+  margin-bottom: 20px;
+  position: relative;
+  transition: all 0.1s;
+}
+
+.page select {
+  background: transparent;
+  color: #c9c9c9;
+  font-size: 20px;
+  padding: 5px;
+  border: none;
+}
+
+.page select option {
+  color: #000;
+}

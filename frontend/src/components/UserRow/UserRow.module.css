@@ -1,0 +1,92 @@
+.row {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  align-items: center;
+  background: #343435;
+  background: linear-gradient(
+    90deg,
+    rgba(52, 52, 53, 0.725) 0%,
+    rgba(89, 89, 89, 0.822) 100%
+  );
+  margin: 0 10px;
+  margin-top: 20px;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.2s ease-out;
+  backdrop-filter: blur(10px);
+}
+
+.row:hover {
+  transform: scale(1.01);
+}
+
+.left {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.left svg {
+  font-size: 56px;
+  color: rgb(108, 232, 129);
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.info h3 {
+  font-size: 28px;
+  color: #fff;
+}
+
+.info p {
+  font-size: 16px;
+  font-weight: 800;
+  color: #a8a8a8;
+}
+
+.calories {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.general {
+  display: flex;
+  font-size: 24px;
+  gap: 15px;
+}
+
+.general svg {
+  color: rgb(230, 128, 50);
+}
+
+.details {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  font-size: 16px;
+  gap: 10px;
+}
+
+.details svg {
+  font-size: 16px;
+}
+
+.detail {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+@media (max-width: 1024px) {
+  .row {
+    flex-direction: column;
+    align-items: start;
+    gap: 24px;
+  }
+}

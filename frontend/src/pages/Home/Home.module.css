@@ -1,0 +1,57 @@
+.plan {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 50px;
+  box-sizing: border-box;
+  z-index: 100;
+}
+
+.plan > h1 {
+  font-size: 36px;
+  color: #fff;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.planContent {
+  display: grid;
+  grid-template-rows: 3fr 1fr 1fr 1fr;
+  padding: 30px;
+  gap: 20px;
+  background: #34344096;
+  backdrop-filter: blur(20px);
+  border-radius: 30px;
+  overflow: hidden;
+}
+
+.planContent .imgHolder img {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+}
+
+.planContent .imgHolder {
+  position: relative;
+}
+
+.planContent > h2 {
+  font-size: 28px;
+  font-weight: 700;
+  justify-self: center;
+  background: #b5b5c7;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 15px;
+  border-radius: 10px;
+  color: #343440;
+}
+
+.planContent > p {
+  font-size: 24px;
+  color: #fff;
+  text-align: center;
+}

@@ -62,14 +62,15 @@ export const loginUser = async (req, res) => {
     );
 
     if (!user || !isPasswordCorrect)
-      return res.status(400).json({ error: "Invalid username or password" });
+      return res.status(400).json({ message: "Invalid username or password" });
 
     generateTokenAndSetCookie(user._id, res);
+    const userRes = await User.findById(user._id).select("-password");
 
-    res.status(200).json(user.username);
+    res.status(200).json(userRes);
   } catch (error) {
     console.log(`Error in login Controller: ${error.message}`);
-    res.status(500).json({ message: "Internal Server Error" });
+    return res.status(500).json({ message: "Internal Server Error" });
   }
 };
 
@@ -160,6 +161,53 @@ export const sendFriendRequest = async (req, res) => {
     res.status(200).json({ message: "Запит на дружбу надіслано" });
   } catch (error) {
     console.error("Помилка надсилання запиту в друзі:", error);
+    res.status(500).json({ message: "Internal Server Error" });
+  }
+};
+export const logoutUser = (req, res) => {
+  res.cookie("jwt", "", {
+    httpOnly: true,
+    expires: new Date(0),
+    sameSite: "strict",
+    secure: process.env.NODE_ENV === "production",
+  });
+  res.status(200).json({ message: "Logged out successfully" });
+};
+
+export const getUser = async (req, res) => {
+  try {
+    const { username } = req.params;
+    const user = await User.findOne({ username }).select("-password");
+    if (!user)
+      return res.status(404).json({ error: "Користувача не знайдено!" });
+
+    return res.status(201).json(user);
+  } catch (error) {
+    res.status(500).json({ message: "Internal Server Error" });
+  }
+};
+
+export const getUserById = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const user = await User.findById(id).select("-password");
+    if (!user)
+      return res.status(404).json({ error: "Користувача не знайдено!" });
+
+    return res.status(201).json(user);
+  } catch (error) {
+    res.status(500).json({ message: "Internal Server Error" });
+  }
+};
+
+export const getUsersSearch = async (req, res) => {
+  try {
+    const query = req.query.username;
+    const users = await User.find({
+      username: { $regex: query, $options: "i" },
+    }).select("-password");
+    res.status(200).json(users || []);
+  } catch (error) {
     res.status(500).json({ message: "Internal Server Error" });
   }
 };

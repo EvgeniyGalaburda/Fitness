@@ -1,0 +1,38 @@
+.page {
+  padding: 20px;
+}
+
+.page > h1 {
+  font-size: 28px;
+  color: #fff;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+.list {
+  background: #33333391;
+  padding: 0 20px;
+  border-radius: 20px;
+  backdrop-filter: blur(20px);
+}
+
+.row > a > h1 {
+  color: #c2c2c2;
+  font-size: 20px;
+}
+
+a {
+  text-decoration: none;
+}
+
+.row:not(:last-child) {
+  border-bottom: 1px solid #c2c2c2;
+}
+
+.row {
+  padding: 40px 0 20px 10px;
+}
+
+h1.none {
+  color: #9a9a9a;
+}

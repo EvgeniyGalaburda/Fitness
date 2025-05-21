@@ -1,0 +1,57 @@
+.page h1 {
+  font-size: 28px;
+  color: #fff;
+  font-weight: 600;
+}
+
+.page {
+  padding: 20px;
+}
+
+.list {
+  margin-top: 20px;
+  padding: 10px;
+  background: #303030;
+  border-radius: 15px;
+}
+
+.row {
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px;
+}
+
+.row:not(:last-of-type) {
+  border-bottom: 1px solid #626373;
+}
+
+.row h2 {
+  font-size: 20px;
+  line-height: 24px;
+}
+
+.left {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.row p {
+  font-size: 20px;
+  color: #cccccc;
+  line-height: 24px;
+}
+
+.left > svg {
+  font-size: 40px;
+  margin-right: 15px;
+  color: rgb(45, 111, 224);
+}
+
+.page > h2 {
+  color: #626373;
+  font-size: 24px;
+  margin-top: 20px;
+}
