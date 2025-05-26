@@ -9,9 +9,9 @@ import { FaRegUserCircle } from "react-icons/fa";
 
 export const Notifications = () => {
   const queryClient = useQueryClient();
-  const user = queryClient.getQueryData<{ data: { friendRequests: string[] } }>(
-    ["authUser"]
-  );
+  const user = queryClient.getQueryData<{
+    data: { friendRequests: string[]; _id: string };
+  }>(["authUser"]);
   return (
     <div className={style.page}>
       <h1>Сповіщення</h1>
@@ -22,7 +22,10 @@ export const Notifications = () => {
           ))}
         </div>
       ) : (
-        <h2>Поки сповіщення відсутні.</h2>
+        // <h2>Поки сповіщення відсутні.</h2>
+        <div className={style.list}>
+          <FriendRequestRow userId={user?.data._id} />
+        </div>
       )}
     </div>
   );
