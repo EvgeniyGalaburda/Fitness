@@ -34,10 +34,9 @@ const FriendRequestRow = ({ userId }: { userId: string | undefined }) => {
     queryFn: async ({ queryKey }) => {
       const [_, id] = queryKey;
       try {
-        const res = await axios.get(
-          `http://localhost:5000/api/user/getUserById/${id}`,
-          { withCredentials: true }
-        );
+        const res = await axios.get(`/api/user/getUserById/${id}`, {
+          withCredentials: true,
+        });
         return res.data;
       } catch (error) {
         console.error(error);

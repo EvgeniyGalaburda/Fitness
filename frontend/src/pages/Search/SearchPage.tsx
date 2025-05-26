@@ -20,10 +20,9 @@ export const SearchPage = () => {
     queryFn: async ({ queryKey }) => {
       const [_, query] = queryKey;
       try {
-        const res = await axios.get(
-          `http://localhost:5000/api/user/search?username=${query}`,
-          { withCredentials: true }
-        );
+        const res = await axios.get(`/api/user/search?username=${query}`, {
+          withCredentials: true,
+        });
         return res.data;
       } catch (error) {
         console.error(error);

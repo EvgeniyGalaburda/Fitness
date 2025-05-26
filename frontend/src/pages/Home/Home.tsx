@@ -13,10 +13,9 @@ export const Home: React.FC<{ plan: { title: string } }> = ({ plan }) => {
     queryKey: ["todayTrainings"],
     queryFn: async () => {
       try {
-        const res = await axios.get(
-          "http://localhost:5000/api/trainings/today-info",
-          { withCredentials: true }
-        );
+        const res = await axios.get("/api/trainings/today-info", {
+          withCredentials: true,
+        });
         return res;
       } catch (error) {
         throw error;
@@ -29,10 +28,9 @@ export const Home: React.FC<{ plan: { title: string } }> = ({ plan }) => {
     queryKey: ["todayFood"],
     queryFn: async () => {
       try {
-        const res = await axios.get(
-          "http://localhost:5000/api/food/today-info",
-          { withCredentials: true }
-        );
+        const res = await axios.get("/api/food/today-info", {
+          withCredentials: true,
+        });
         return res;
       } catch (error) {
         throw error;

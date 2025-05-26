@@ -24,7 +24,7 @@ export const Login = () => {
       password: string;
     }) => {
       const res = await axios.post(
-        "http://localhost:5000/api/user/login",
+        "/api/user/login",
         { username, password },
         { withCredentials: true }
       );

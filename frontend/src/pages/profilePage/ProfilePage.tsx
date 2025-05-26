@@ -31,10 +31,9 @@ export const ProfilePage = () => {
     queryFn: async ({ queryKey }) => {
       const [_, userToFetch] = queryKey;
       try {
-        const res = await axios.get(
-          `http://localhost:5000/api/user/getUser/${userToFetch}`,
-          { withCredentials: true }
-        );
+        const res = await axios.get(`/api/user/getUser/${userToFetch}`, {
+          withCredentials: true,
+        });
         return res.data;
       } catch (error) {
         console.error("Користувача не знайдено!");
@@ -49,7 +48,7 @@ export const ProfilePage = () => {
     queryFn: async () => {
       try {
         const res = await axios.get(
-          `http://localhost:5000/api/trainings/all-trainings?username=${username}`,
+          `/api/trainings/all-trainings?username=${username}`,
           { withCredentials: true }
         );
         return res.data || [];
@@ -66,7 +65,7 @@ export const ProfilePage = () => {
     queryFn: async () => {
       try {
         const res = await axios.get(
-          `http://localhost:5000/api/trainings/statistic?username=${username}`,
+          `/api/trainings/statistic?username=${username}`,
           { withCredentials: true }
         );
         return res.data;

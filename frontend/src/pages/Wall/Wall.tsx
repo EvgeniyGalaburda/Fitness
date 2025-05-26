@@ -13,10 +13,9 @@ export default function Wall() {
     queryKey: ["friendsTrainings"],
     queryFn: async () => {
       try {
-        const res = await axios.get(
-          "http://localhost:5000/api/trainings/wall",
-          { withCredentials: true }
-        );
+        const res = await axios.get("/api/trainings/wall", {
+          withCredentials: true,
+        });
         return res.data;
       } catch (error) {
         console.log(error);
