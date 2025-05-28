@@ -43,6 +43,7 @@ export const AddTrainingPage = () => {
     onSuccess: async () => {
       toast.success("Тренування додано");
       await queryClient.invalidateQueries({ queryKey: ["todayTrainings"] });
+      await queryClient.invalidateQueries({ queryKey: ["authUser"] });
       navigate("/");
     },
   });

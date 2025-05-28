@@ -75,6 +75,8 @@ export const ProfilePage = () => {
     },
   });
 
+  const statistic = [...(statisticT ?? [])].reverse();
+
   //Авторизований коричтувач
   const me = queryClient.getQueryData<{
     data: { username: string; _id: string; friendRequests: string[] };
@@ -141,7 +143,7 @@ export const ProfilePage = () => {
           </div>
           <div className={style.chart}>
             <h1>Графік тренувань</h1>
-            <CaloriesBarChart data={statisticT} />
+            <CaloriesBarChart data={statistic} />
           </div>
         </>
       ) : (

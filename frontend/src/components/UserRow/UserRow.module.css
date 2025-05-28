@@ -83,6 +83,16 @@
   gap: 10px;
 }
 
+.level {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  padding-right: 15px;
+}
+
 @media (max-width: 1024px) {
   .row {
     flex-direction: column;

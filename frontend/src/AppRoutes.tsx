@@ -25,6 +25,8 @@ export interface userInterface {
   imt?: number;
   calorieGoal?: number;
   friends?: string[];
+  level?: number;
+  levelProgress?: number;
 }
 
 export interface userPlan {

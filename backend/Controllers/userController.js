@@ -3,6 +3,7 @@ import bcrypt from "bcryptjs";
 import User from "../Models/User.js";
 import { generateTokenAndSetCookie } from "../utils/generateToken.js";
 import { calculateBMR } from "../utils/calculateBMR.js";
+import Trainings from "../Models/Trainings.js";
 
 export const registerUser = async (req, res) => {
   try {
@@ -45,6 +46,18 @@ export const registerUser = async (req, res) => {
 export const getMe = async (req, res) => {
   try {
     const user = await User.findById(req.user._id).select("-password");
+    if (!user)
+      return res.status(404).json({ error: "Користувача не знайдено!" });
+    const allTrainings = await Trainings.find({ userId: user.id });
+    const generalAmountOfCalories = allTrainings.reduce((a, c) => {
+      return a + (c.calories || 0);
+    }, 0);
+    user.level = Math.floor(generalAmountOfCalories / 1000);
+    const levelProgress = (generalAmountOfCalories / 1000 - user.level).toFixed(
+      2
+    );
+    user.levelProgress = levelProgress || 0;
+    await user.save();
     res.status(201).json(user);
   } catch (error) {
     console.log("Error in getMe controller", error.message);

@@ -5,6 +5,7 @@ import { FaRegUserCircle } from "react-icons/fa";
 import { FaGripfire } from "react-icons/fa";
 import { FaBowlFood } from "react-icons/fa6";
 import { FaDumbbell } from "react-icons/fa6";
+import { ProgressLine } from "../ProgressLine";
 
 export const UserRow: React.FC<{
   user: userInterface;
@@ -22,6 +23,10 @@ export const UserRow: React.FC<{
             IMT: {user.imt?.toFixed(2)} {plan && <>- {plan}</>}
           </p>
         </div>
+      </div>
+      <div className={style.level}>
+        <p>Рівень - {user.level}</p>
+        <ProgressLine percentage={user.levelProgress || 0} />
       </div>
       {typeof tCalories === "number" && typeof fCalories === "number" && (
         <div className={style.calories}>
