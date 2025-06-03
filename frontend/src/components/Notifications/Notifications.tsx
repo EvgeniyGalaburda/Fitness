@@ -22,10 +22,7 @@ export const Notifications = () => {
           ))}
         </div>
       ) : (
-        // <h2>Поки сповіщення відсутні.</h2>
-        <div className={style.list}>
-          <FriendRequestRow userId={user?.data._id} />
-        </div>
+        <h2>Поки сповіщення відсутні.</h2>
       )}
     </div>
   );
